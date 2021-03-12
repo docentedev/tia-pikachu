@@ -6,7 +6,7 @@ import "../brand.css"
 import tiaTrajeImg from "../images/tia_traje.png"
 import HeaderBGImg from "../images/header_bg.jpg"
 import ContributionsBGImg from "../images/contributions_bg.jpg"
-import USImg from "../images/us.jpeg"
+import USImg from "../images/us.jpg"
 import LogoListaImg from "../images/logo-lista.png"
 import LogoImg from "../images/logo.png"
 
