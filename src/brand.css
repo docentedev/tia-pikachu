@@ -1,5 +1,6 @@
 /* Brand */
 .header__title {
+  text-shadow: 1px 1px 7px #000000a8;
   color: #fff;
   text-align: left;
   width: 250px;
@@ -20,6 +21,7 @@
 }
 
 .header__title h2::before {
+  box-shadow: 1px 1px 7px #000000a8;
   content: "";
   position: absolute;
   height: 2px;

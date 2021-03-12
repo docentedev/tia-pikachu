@@ -67,7 +67,7 @@ const IndexPage = () => {
       </header>
       <section className="us-section">
         <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-4 mb-2 mb-4">
+          <div className="col-sm-12 col-md-12 col-lg-4 mb-2">
             <h3>Porque no queremos más que el <strong>1%</strong> decida por nosotrxs</h3>
           </div>
           <div className="col-md-10 offset-md-1 offset-lg-3 col-lg-5">
@@ -90,7 +90,6 @@ const IndexPage = () => {
       <section style={ContributionsSection} className="contributions-section">
         <div className="row">
           <div className="col-lg-6">
-            <h3>APORTA CON DINERO</h3>
             <p>Esta campaña es independiente, no está financiada por partidos políticos ni por grandes empresas. Nuestro trabajo es 100% voluntario, pero necesitamos ayuda para financiar materiales y cosas prácticas de la campaña. La contienda es desigual, pero con tu ayuda y la de otrxs podemos lograrlo. ¡Sólo el pueblo ayuda al pueblo!</p>
           </div>
           <div className="col-lg-6">
@@ -122,10 +121,13 @@ const IndexPage = () => {
                 <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
               </svg>
             </a>
-            <strong>2021 Giovanna Grandón</strong>
+            <strong className="d-none d-md-block">2021 Giovanna Grandón</strong>
           </div>
           <div className="col-md-4 my-4">
-            <img src={LogoListaImg} alt="Logo lista del Pueblo" />
+            <a target="_blank" rel="noreferrer" href="https://lalistadelpueblo.cl/" title="La Lista del Pueblo">
+              <img src={LogoListaImg} alt="Logo lista del Pueblo" />
+            </a>
+            <strong className="d-block d-md-none mt-4">2021 Giovanna Grandón</strong>
           </div>
         </div>
       </footer>

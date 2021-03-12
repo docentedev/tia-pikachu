@@ -21,14 +21,14 @@ header .btn {
 }
 
 .btn-success {
-  background-color: #47b8af;
-  border-color: #47b8af;
+  background-color: #008679;
+  border-color: #008679;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #008679;
-  border-color: #008679;
+  background-color: #47b8af;
+  border-color: #47b8af;
 }
 
 *,
@@ -80,6 +80,7 @@ header {
 }
 
 .form-section {
+  overflow: hidden;
   background-color: #facd3e;
 }
 
@@ -148,6 +149,7 @@ footer strong {
 @media (min-width: 576px) {
   header {
     padding-top: 310px!important;
+    padding-bottom: 126px!important;
   }
 }
 
