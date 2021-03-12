@@ -4,8 +4,8 @@ import "../bootstrap.css"
 import "../style.css"
 import "../brand.css"
 import tiaTrajeImg from "../images/tia_traje.png"
-import HeaderBGImg from "../images/header_bg.png"
-import ContributionsBGImg from "../images/contributions_bg.png"
+import HeaderBGImg from "../images/header_bg.jpg"
+import ContributionsBGImg from "../images/contributions_bg.jpg"
 import USImg from "../images/us.jpeg"
 import LogoListaImg from "../images/logo-lista.png"
 import LogoImg from "../images/logo.png"
@@ -38,7 +38,10 @@ const HeaderBrand = () => {
 const IndexPage = () => {
   return (
     <main>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: 'es-CL',
+        }}>
         <meta charSet="utf-8" />
         <title>Giovanna Grandón Caro</title>
         <meta
