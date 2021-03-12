@@ -83,7 +83,7 @@ const IndexPage = () => {
         <img className="form-section__img d-md-block d-lg-none" src={tiaTrajeImg} alt="Logo" />
         <div className="row">
           <div className="col-lg-6">
-            <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSeoAT2DN0ZBS5LlZg7N6JZ1DKRihP4CKQ1_LW9PyBJ5CwmQgw/viewform?embedded=true" width="100%" height="1650" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
+            <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSeoAT2DN0ZBS5LlZg7N6JZ1DKRihP4CKQ1_LW9PyBJ5CwmQgw/viewform?embedded=true" width="100%" height="1420" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
           </div>
           <div className="col-lg-6 d-none d-lg-block">
             <img className="img-fluid" src={tiaTrajeImg} alt="Logo" />

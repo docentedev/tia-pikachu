@@ -80,7 +80,6 @@ header {
 }
 
 .form-section {
-  overflow-x: hidden;
   background-color: #facd3e;
 }
 
@@ -92,6 +91,10 @@ header {
 
 .form-section h3 {
   display: none;
+}
+
+.form-section .row {
+  --bs-gutter-x: 0;
 }
 
 iframe {
@@ -148,8 +151,8 @@ footer strong {
 
 @media (min-width: 576px) {
   header {
-    padding-top: 310px!important;
-    padding-bottom: 126px!important;
+    padding-top: 310px !important;
+    padding-bottom: 126px !important;
   }
 }
 
