@@ -80,7 +80,7 @@ header {
 }
 
 .form-section {
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: #facd3e;
 }
 

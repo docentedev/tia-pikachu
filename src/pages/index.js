@@ -9,6 +9,7 @@ import ContributionsBGImg from "../images/contributions_bg.jpg"
 import USImg from "../images/us.jpg"
 import LogoListaImg from "../images/logo-lista.png"
 import LogoImg from "../images/logo.png"
+import LogoMain from "../images/logo-main.png"
 
 const HeaderSection = {
   backgroundImage: `url(${HeaderBGImg})`,
@@ -21,7 +22,9 @@ const ContributionsSection = {
 const HeaderBrand = () => {
   return (
     <div className="header__title">
-      <h1>Giovanna Grandón Caro</h1>
+      <h1>
+        <img className="img-fluid" src={LogoMain} alt="Giovanna Grandón Caro" />
+      </h1>
       <h2>CONSTITUYENTE DISTRITO 12</h2>
       <ul>
         <li>La Florida</li>
@@ -80,7 +83,7 @@ const IndexPage = () => {
         <img className="form-section__img d-md-block d-lg-none" src={tiaTrajeImg} alt="Logo" />
         <div className="row">
           <div className="col-lg-6">
-            <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSdv3XTs7P5xdPc1fZnzhbdDhlHh6HNbdbkPHkK13KZLNH14zg/viewform?embedded=true" width="100%" height="1650" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
+            <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSeoAT2DN0ZBS5LlZg7N6JZ1DKRihP4CKQ1_LW9PyBJ5CwmQgw/viewform?embedded=true" width="100%" height="1650" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
           </div>
           <div className="col-lg-6 d-none d-lg-block">
             <img className="img-fluid" src={tiaTrajeImg} alt="Logo" />
