@@ -5,7 +5,7 @@ module.exports = {
     titleTemplate: "%s · Tia Pikachu",
     description:
       "Sitio web Giovanna Grandón Caro constituyente distrito 12",
-    url: "https://docentedev.github.io/tia-pikachu", // No trailing slash allowed!
+    url: "https://www.tiapikachu.cl", // No trailing slash allowed!
     image: "/images/logo.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@TiaPikachu",
   },
