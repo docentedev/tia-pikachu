@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import "../bootstrap.css"
 import "../style.css"
 import "../brand.css"
@@ -37,7 +38,19 @@ const HeaderBrand = () => {
 const IndexPage = () => {
   return (
     <main>
-      <title>Giovanna Grandón Caro</title>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Giovanna Grandón Caro</title>
+        <meta
+          name="description"
+          content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
+        <meta property="og:title" content="Tia Pikachu Constituyente D12" />
+        <meta property="og:site_name" content="Tia Pikachu" />
+        <meta property="og:url" content="https://docentedev.github.io/tia-pikachu" />
+        <meta property="og:description" content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
+        <meta property="og:type" content="quick_election.election" />
+        <meta property="og:image" content={LogoImg} />
+      </Helmet>
       <header style={HeaderSection}>
         <div className="row">
           <div className="col-lg-7"><HeaderBrand /></div>
