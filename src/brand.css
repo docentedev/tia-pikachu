@@ -1,0 +1,95 @@
+/* Brand */
+.header__title {
+  color: #fff;
+  text-align: left;
+  width: 250px;
+}
+
+.header__title h1 {
+  line-height: 2.9rem;
+  font-weight: 600;
+  font-size: 54px;
+}
+
+.header__title h2 {
+  line-height: 2.9rem;
+  font-weight: 600;
+  font-size: 16.4px;
+  color: #facd3e;
+  position: relative;
+}
+
+.header__title h2::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #facd3e;
+}
+
+.header__title ul {
+  padding: 0;
+}
+
+.header__title li {
+  padding-bottom: 4px;
+  padding-right: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.header__title li:last-child {
+  padding-right: 0;
+  display: inline-block;
+}
+
+.header__title li::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 2px;
+  top: 3px;
+  right: 7px;
+  background-color: #ee7141;
+}
+
+.header__title li:last-child::before {
+  display: none;
+}
+
+/* Brand */
+@media (min-width: 481px) {
+  /* Brand */
+  .header__title {
+    width: 340px;
+  }
+
+  .header__title h1 {
+    font-size: 72px;
+    line-height: 4rem;
+  }
+
+  .header__title h2 {
+    font-size: 22px;
+  }
+  /* Brand */
+}
+
+@media (min-width: 768px) {
+  /* Brand */
+  .header__title {
+    width: 527px;
+  }
+
+  .header__title h2 {
+    font-size: 34.6px;
+  }
+  /* Brand */
+}
+
+@media (min-width: 992px) {
+  .p-absolute {
+    position: absolute;
+  }
+  /* Brand */
+}
