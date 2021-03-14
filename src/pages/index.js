@@ -10,6 +10,7 @@ import USImg from "../images/us.jpg"
 import LogoListaImg from "../images/logo-lista.png"
 import LogoImg from "../images/logo.png"
 import LogoMain from "../images/logo-main.png"
+import Suit from "../images/suit.png"
 
 const HeaderSection = {
   backgroundImage: `url(${HeaderBGImg})`,
@@ -71,13 +72,37 @@ const IndexPage = () => {
       <section className="us-section">
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-4 mb-2">
-            <h3>Porque no queremos más que el <strong>1%</strong> decida por nosotrxs</h3>
+            <h3 className="mb-4">Porque no queremos más que el <strong>1%</strong> decida por nosotrxs</h3>
           </div>
           <div className="col-md-10 offset-md-1 offset-lg-3 col-lg-5">
-            <img className="img-thumbnail" src={USImg} alt="Giovanna y Lista del Pueblo puño en alto" />
+            <img className="img-thumbnail" src={USImg} alt="Giovanna Ideas" />
           </div>
         </div>
       </section>
+      <div className="team-section">
+        <div className="row">
+          <div className="col-md-8 offset-md-2">
+            <div className="team-section__header">
+              <div>
+                <div className="circle-image">
+                  <img src={Suit} alt="Logo" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-8 offset-md-2">
+            <div className="team-section__header">
+              <div>
+                <h3 className="mb-4 fw-bolder fst-italic">Podría decir lo que cualquier candidato contestaría...</h3>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-8 offset-md-2">
+            <p>Pero mi candidatura es diferente, incluso puede parecer un poco extraña, porque lo que yo quiero es llevar <strong>la voz de mi pueblo a la Constituyente</strong> y para eso con un equipo de voluntarios queremos desarrollar una plataforma participativa donde abriremos la conversación sobre las grandes preguntas, prepararemos propuestas y las personas podrán votar estas propuestas, así yo podré llevar lo que realmente queremos y luchar por ello.
+La razón por la que quiero ser constituyente es porque quiero cambios para nuestra gente, ya me canse al igual que muchos, que los mismos de siempre nos sigan prometiendo cambios y que estos nunca lleguen, quiero que todas las niñas y  niños tengan las mismas oportunidades de desarrollarse y ser felices, que tengan acceso a una educación inclusiva y de calidad que sea gratuita, quiero que cualquier trabajo nos permita tener una vida y luego una pensión digna, quiero que toda la gente pueda tener un techo y no tengan que vivir en campamentos, a veces en condiciones inhumanas, quiero que la salud no sea un privilegio, quiero que haya un respeto absoluto a los DDHH y que la justicia sea igual para todos, que los recursos naturales sean de todas las chilenas y chilenos, y que podamos tomar decisiones juntos de cómo, cuándo y cuánto explotarlos, quiero que cuidemos del medio ambiente para que los pequeños de hoy tengan un mañana y tantas otras cosas... pero lo más importante es que quiero que decidamos lo que queremos juntas y juntos, así como también los mecanismos para hacer esto posible.</p>
+          </div>
+        </div>
+      </div>
       <section className="form-section" id="unete">
         <h3>Súmate al equipo Pikachu</h3>
         <img className="form-section__img d-md-block d-lg-none" src={tiaTrajeImg} alt="Logo" />
@@ -134,7 +159,7 @@ const IndexPage = () => {
           </div>
         </div>
       </footer>
-    </main>
+    </main >
   )
 }
 
