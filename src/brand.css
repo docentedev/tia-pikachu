@@ -1,8 +1,10 @@
 /* Brand */
 .header__title {
+  text-shadow: 1px 1px 7px #000000a8;
   color: #fff;
-  text-align: left;
-  width: 250px;
+  text-align: center;
+  width: 300px;
+  margin: auto;
 }
 
 .header__title h1 {
@@ -14,12 +16,13 @@
 .header__title h2 {
   line-height: 2.9rem;
   font-weight: 600;
-  font-size: 16.4px;
+  font-size: 19px;
   color: #facd3e;
   position: relative;
 }
 
 .header__title h2::before {
+  box-shadow: 1px 1px 7px #000000a8;
   content: "";
   position: absolute;
   height: 2px;
@@ -61,7 +64,9 @@
 @media (min-width: 481px) {
   /* Brand */
   .header__title {
-    width: 340px;
+    text-align: left;
+    margin: left;
+    width: 344px;
   }
 
   .header__title h1 {
@@ -78,7 +83,7 @@
 @media (min-width: 768px) {
   /* Brand */
   .header__title {
-    width: 527px;
+    width: 530px;
   }
 
   .header__title h2 {

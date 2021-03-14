@@ -9,6 +9,8 @@ import ContributionsBGImg from "../images/contributions_bg.jpg"
 import USImg from "../images/us.jpg"
 import LogoListaImg from "../images/logo-lista.png"
 import LogoImg from "../images/logo.png"
+import LogoMain from "../images/logo-main.png"
+import Suit from "../images/suit.png"
 
 const HeaderSection = {
   backgroundImage: `url(${HeaderBGImg})`,
@@ -21,7 +23,9 @@ const ContributionsSection = {
 const HeaderBrand = () => {
   return (
     <div className="header__title">
-      <h1>Giovanna Grandón Caro</h1>
+      <h1>
+        <img className="img-fluid" src={LogoMain} alt="Giovanna Grandón Caro" />
+      </h1>
       <h2>CONSTITUYENTE DISTRITO 12</h2>
       <ul>
         <li>La Florida</li>
@@ -49,7 +53,7 @@ const IndexPage = () => {
           content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
         <meta property="og:title" content="Tia Pikachu Constituyente D12" />
         <meta property="og:site_name" content="Tia Pikachu" />
-        <meta property="og:url" content="https://docentedev.github.io/tia-pikachu" />
+        <meta property="og:url" content="https://www.tiapikachu.cl" />
         <meta property="og:description" content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
         <meta property="og:type" content="quick_election.election" />
         <meta property="og:image" content={LogoImg} />
@@ -67,20 +71,44 @@ const IndexPage = () => {
       </header>
       <section className="us-section">
         <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-4 mb-2 mb-4">
-            <h3>Porque no queremos más que el <strong>1%</strong> decida por nosotrxs</h3>
+          <div className="col-sm-12 col-md-12 col-lg-4 mb-2">
+            <h3 className="mb-4">Porque no queremos más que el <strong>1%</strong> decida por nosotrxs</h3>
           </div>
           <div className="col-md-10 offset-md-1 offset-lg-3 col-lg-5">
-            <img className="img-thumbnail" src={USImg} alt="Giovanna y Lista del Pueblo puño en alto" />
+            <img className="img-thumbnail" src={USImg} alt="Giovanna Ideas" />
           </div>
         </div>
       </section>
+      <div className="team-section">
+        <div className="row">
+          <div className="col-md-8 offset-md-2">
+            <div className="team-section__header">
+              <div>
+                <div className="circle-image">
+                  <img src={Suit} alt="Logo" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-8 offset-md-2">
+            <div className="team-section__header">
+              <div>
+                <h3 className="mb-4 fw-bolder fst-italic">Podría decir lo que cualquier candidato contestaría...</h3>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-8 offset-md-2">
+            <p>Pero mi candidatura es diferente, incluso puede parecer un poco extraña, porque lo que yo quiero es llevar <strong>la voz de mi pueblo a la Constituyente</strong> y para eso con un equipo de voluntarios queremos desarrollar una plataforma participativa donde abriremos la conversación sobre las grandes preguntas, prepararemos propuestas y las personas podrán votar estas propuestas, así yo podré llevar lo que realmente queremos y luchar por ello.
+La razón por la que quiero ser constituyente es porque quiero cambios para nuestra gente, ya me canse al igual que muchos, que los mismos de siempre nos sigan prometiendo cambios y que estos nunca lleguen, quiero que todas las niñas y  niños tengan las mismas oportunidades de desarrollarse y ser felices, que tengan acceso a una educación inclusiva y de calidad que sea gratuita, quiero que cualquier trabajo nos permita tener una vida y luego una pensión digna, quiero que toda la gente pueda tener un techo y no tengan que vivir en campamentos, a veces en condiciones inhumanas, quiero que la salud no sea un privilegio, quiero que haya un respeto absoluto a los DDHH y que la justicia sea igual para todos, que los recursos naturales sean de todas las chilenas y chilenos, y que podamos tomar decisiones juntos de cómo, cuándo y cuánto explotarlos, quiero que cuidemos del medio ambiente para que los pequeños de hoy tengan un mañana y tantas otras cosas... pero lo más importante es que quiero que decidamos lo que queremos juntas y juntos, así como también los mecanismos para hacer esto posible.</p>
+          </div>
+        </div>
+      </div>
       <section className="form-section" id="unete">
         <h3>Súmate al equipo Pikachu</h3>
         <img className="form-section__img d-md-block d-lg-none" src={tiaTrajeImg} alt="Logo" />
         <div className="row">
           <div className="col-lg-6">
-            <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSdv3XTs7P5xdPc1fZnzhbdDhlHh6HNbdbkPHkK13KZLNH14zg/viewform?embedded=true" width="100%" height="1650" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
+            <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSeoAT2DN0ZBS5LlZg7N6JZ1DKRihP4CKQ1_LW9PyBJ5CwmQgw/viewform?embedded=true" width="100%" height="1420" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
           </div>
           <div className="col-lg-6 d-none d-lg-block">
             <img className="img-fluid" src={tiaTrajeImg} alt="Logo" />
@@ -90,7 +118,6 @@ const IndexPage = () => {
       <section style={ContributionsSection} className="contributions-section">
         <div className="row">
           <div className="col-lg-6">
-            <h3>APORTA CON DINERO</h3>
             <p>Esta campaña es independiente, no está financiada por partidos políticos ni por grandes empresas. Nuestro trabajo es 100% voluntario, pero necesitamos ayuda para financiar materiales y cosas prácticas de la campaña. La contienda es desigual, pero con tu ayuda y la de otrxs podemos lograrlo. ¡Sólo el pueblo ayuda al pueblo!</p>
           </div>
           <div className="col-lg-6">
@@ -122,14 +149,17 @@ const IndexPage = () => {
                 <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
               </svg>
             </a>
-            <strong>2021 Giovanna Grandón</strong>
+            <strong className="d-none d-md-block">2021 Giovanna Grandón</strong>
           </div>
           <div className="col-md-4 my-4">
-            <img src={LogoListaImg} alt="Logo lista del Pueblo" />
+            <a target="_blank" rel="noreferrer" href="https://lalistadelpueblo.cl/" title="La Lista del Pueblo">
+              <img src={LogoListaImg} alt="Logo lista del Pueblo" />
+            </a>
+            <strong className="d-block d-md-none mt-4">2021 Giovanna Grandón</strong>
           </div>
         </div>
       </footer>
-    </main>
+    </main >
   )
 }
 
