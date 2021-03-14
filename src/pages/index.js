@@ -12,6 +12,9 @@ import LogoImg from "../images/logo.png"
 import LogoMain from "../images/logo-main.png"
 import Suit from "../images/suit.png"
 
+import JotForm from "../components/JotForm"
+import WspIcon from "../components/WspIcon"
+
 const HeaderSection = {
   backgroundImage: `url(${HeaderBGImg})`,
 }
@@ -40,126 +43,169 @@ const HeaderBrand = () => {
 
 // markup
 const IndexPage = () => {
+
+  const [readMode, setReadMore] = React.useState(false)
+  const [showJotForm, setShowJotForm] = React.useState(false)
+
+  const handleReadMore = () => {
+    setReadMore(true)
+  }
+
+  React.useEffect(() => {
+
+  })
+
   return (
-    <main>
-      <Helmet
-        htmlAttributes={{
-          lang: 'es-CL',
-        }}>
-        <meta charSet="utf-8" />
-        <title>Giovanna Grandón Caro</title>
-        <meta
-          name="description"
-          content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
-        <meta property="og:title" content="Tia Pikachu Constituyente D12" />
-        <meta property="og:site_name" content="Tia Pikachu" />
-        <meta property="og:url" content="https://www.tiapikachu.cl" />
-        <meta property="og:description" content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
-        <meta property="og:type" content="quick_election.election" />
-        <meta property="og:image" content={LogoImg} />
-      </Helmet>
-      <header style={HeaderSection}>
-        <div className="row">
-          <div className="col-lg-7"><HeaderBrand /></div>
-          <div className="col-lg-5 position-relative">
-            <div className="p-absolute bottom-0 end-0">
-              <a className="btn btn-warning btn-lg" href="#unete">ÚNETE</a>
-              <a target="_blank" rel="noreferrer" className="btn btn-warning btn-lg" href="https://aportes.servel.cl/servel-aportes/inicio.xhtml">DONA</a>
+    <>
+      <main>
+        <Helmet
+          htmlAttributes={{
+            lang: 'es-CL',
+          }}>
+          <meta charSet="utf-8" />
+          <title>Giovanna Grandón Caro</title>
+          <meta
+            name="description"
+            content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
+          <meta property="og:title" content="Tia Pikachu Constituyente D12" />
+          <meta property="og:site_name" content="Tia Pikachu" />
+          <meta property="og:url" content="https://www.tiapikachu.cl" />
+          <meta property="og:description" content="Sitio web Giovanna Grandón Caro constituyente distrito 12" />
+          <meta property="og:type" content="quick_election.election" />
+          <meta property="og:image" content={LogoImg} />
+        </Helmet>
+        <header>
+          <nav className="navbar navbar-expand-md navbar-dark fixed-top">
+            <button className="btn btn-info" onClick={() => setShowJotForm(true)}>
+              ¿Que quieres ver en la #NuevaConstitución?
+            </button>
+          </nav>
+        </header>
+        <section id="main-section" className="main-section" style={HeaderSection}>
+          <div className="row">
+            <div className="col-lg-7"><HeaderBrand /></div>
+            <div className="col-lg-5 position-relative">
+              <div className="p-absolute bottom-0 end-0">
+                <a className="btn btn-warning btn-lg" href="#unete">ÚNETE</a>
+                <a target="_blank" rel="noreferrer" className="btn btn-warning btn-lg" href="https://aportes.servel.cl/servel-aportes/inicio.xhtml">DONA</a>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
-      <section className="us-section">
-        <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-4 mb-2">
-            <h3 className="mb-4">Porque no queremos más que el <strong>1%</strong> decida por nosotrxs</h3>
+        </section>
+        <section className="us-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12 col-md-12 col-lg-5 mb-2">
+                <h3 className="mb-4">Porque no queremos más que el <strong>1%</strong> decida por nosotrxs</h3>
+              </div>
+              <div className="col-md-10 offset-md-1 offset-lg-2 col-lg-5">
+                <img className="img-thumbnail" src={USImg} alt="Giovanna Ideas" />
+              </div>
+            </div>
           </div>
-          <div className="col-md-10 offset-md-1 offset-lg-3 col-lg-5">
-            <img className="img-thumbnail" src={USImg} alt="Giovanna Ideas" />
-          </div>
-        </div>
-      </section>
-      <div className="team-section">
-        <div className="row">
-          <div className="col-md-8 offset-md-2">
-            <div className="team-section__header">
-              <div>
-                <div className="circle-image">
-                  <img src={Suit} alt="Logo" />
+        </section>
+        <div className="team-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 offset-md-2">
+                <div className="team-section__header">
+                  <div>
+                    <div className="circle-image">
+                      <img src={Suit} alt="Logo" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-8 offset-md-2">
+                <div className="team-section__header">
+                  <div>
+                    <h3 className="mb-4 fw-bolder fst-italic">Podría decir lo que cualquier candidato contestaría...</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-8 offset-md-2">
+                <p>Pero mi candidatura es diferente, incluso puede parecer un poco extraña, porque lo que yo quiero es llevar <strong>la voz de mi pueblo a la Constituyente</strong> y para eso con un equipo de voluntarios queremos desarrollar una plataforma participativa donde abriremos la conversación sobre las grandes preguntas, prepararemos propuestas y las personas podrán votar estas propuestas, así yo podré llevar lo que realmente queremos y luchar por ello.</p>
+                <div className={`text-center mb-4 ${!readMode ? 'd-block' : 'd-none'}`}>
+                  <button onClick={handleReadMore} className="read-more__btn btn btn-warning btn-lg">Seguir Leyendo</button>
+                </div>
+                <div className={`read-more__section ${readMode ? 'd-block' : 'd-none'}`}>
+                  <p>La razón por la que quiero ser constituyente es porque quiero cambios para nuestra gente, ya me canse al igual que muchos, que los mismos de siempre nos sigan prometiendo cambios y que estos nunca lleguen, quiero que todas las niñas y  niños tengan las mismas oportunidades de desarrollarse y ser felices, que tengan acceso a una educación inclusiva y de calidad que sea gratuita, quiero que cualquier trabajo nos permita tener una vida y luego una pensión digna, quiero que toda la gente pueda tener un techo y no tengan que vivir en campamentos, a veces en condiciones inhumanas, quiero que la salud no sea un privilegio.
+<br /><br />Quiero que haya un respeto absoluto a los DDHH y que la justicia sea igual para todos, que los recursos naturales sean de todas las chilenas y chilenos, y que podamos tomar decisiones juntos de cómo, cuándo y cuánto explotarlos, quiero que cuidemos del medio ambiente para que los pequeños de hoy tengan un mañana y tantas otras cosas... pero lo más importante es que quiero que decidamos lo que queremos juntas y juntos, así como también los mecanismos para hacer esto posible.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-md-8 offset-md-2">
-            <div className="team-section__header">
-              <div>
-                <h3 className="mb-4 fw-bolder fst-italic">Podría decir lo que cualquier candidato contestaría...</h3>
+        </div>
+        <section className="form-section" id="unete">
+          <h3>Súmate al equipo Pikachu</h3>
+          <img className="form-section__img d-md-block d-lg-none" src={tiaTrajeImg} alt="Logo" />
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6">
+                <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSeoAT2DN0ZBS5LlZg7N6JZ1DKRihP4CKQ1_LW9PyBJ5CwmQgw/viewform?embedded=true" width="100%" height="1420" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
+              </div>
+              <div className="col-lg-6 d-none d-lg-block">
+                <img className="img-fluid" src={tiaTrajeImg} alt="Logo" />
               </div>
             </div>
           </div>
-          <div className="col-md-8 offset-md-2">
-            <p>Pero mi candidatura es diferente, incluso puede parecer un poco extraña, porque lo que yo quiero es llevar <strong>la voz de mi pueblo a la Constituyente</strong> y para eso con un equipo de voluntarios queremos desarrollar una plataforma participativa donde abriremos la conversación sobre las grandes preguntas, prepararemos propuestas y las personas podrán votar estas propuestas, así yo podré llevar lo que realmente queremos y luchar por ello.
-La razón por la que quiero ser constituyente es porque quiero cambios para nuestra gente, ya me canse al igual que muchos, que los mismos de siempre nos sigan prometiendo cambios y que estos nunca lleguen, quiero que todas las niñas y  niños tengan las mismas oportunidades de desarrollarse y ser felices, que tengan acceso a una educación inclusiva y de calidad que sea gratuita, quiero que cualquier trabajo nos permita tener una vida y luego una pensión digna, quiero que toda la gente pueda tener un techo y no tengan que vivir en campamentos, a veces en condiciones inhumanas, quiero que la salud no sea un privilegio, quiero que haya un respeto absoluto a los DDHH y que la justicia sea igual para todos, que los recursos naturales sean de todas las chilenas y chilenos, y que podamos tomar decisiones juntos de cómo, cuándo y cuánto explotarlos, quiero que cuidemos del medio ambiente para que los pequeños de hoy tengan un mañana y tantas otras cosas... pero lo más importante es que quiero que decidamos lo que queremos juntas y juntos, así como también los mecanismos para hacer esto posible.</p>
+        </section>
+        <section style={ContributionsSection} className="contributions-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6">
+                <p className="text-start">Esta campaña es independiente, no está financiada por partidos políticos ni por grandes empresas. Nuestro trabajo es 100% voluntario, pero necesitamos ayuda para financiar materiales y cosas prácticas de la campaña. La contienda es desigual, pero con tu ayuda y la de otrxs podemos lograrlo. ¡Sólo el pueblo ayuda al pueblo!</p>
+              </div>
+              <div className="col-lg-6">
+                <a target="_blank" rel="noreferrer" className="btn btn-success btn-lg" href="https://aportes.servel.cl/servel-aportes/inicio.xhtml">APORTA CON DINERO</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <section className="form-section" id="unete">
-        <h3>Súmate al equipo Pikachu</h3>
-        <img className="form-section__img d-md-block d-lg-none" src={tiaTrajeImg} alt="Logo" />
-        <div className="row">
-          <div className="col-lg-6">
-            <iframe title="Formularios Súmate al equipo Pikachu" src="https://docs.google.com/forms/d/e/1FAIpQLSeoAT2DN0ZBS5LlZg7N6JZ1DKRihP4CKQ1_LW9PyBJ5CwmQgw/viewform?embedded=true" width="100%" height="1420" frameBorder="0" marginHeight="0" marginWidth="0">Cargando…</iframe>
+        </section>
+        <footer>
+          <div className="row">
+            <div className="col-md-4 my-4">
+              <a href="#main-section" title="Back to Top">
+                <img src={LogoImg} alt="Logo" />
+              </a>
+            </div>
+            <div className="col-md-4 my-4">
+              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/bailapikachu.oficial/" title="instagram">
+                <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                </svg>
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://twitter.com/tiapikachu" title="twitter">
+                <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                </svg>
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCEcmyTtxFIrUFiYpdhBUfJA" title="youtube">
+                <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+                </svg>
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.facebook.com/tiapikachuconstituyente" title="facebook">
+                <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+                </svg>
+              </a>
+              <strong className="d-none d-md-block">2021 Giovanna Grandón</strong>
+            </div>
+            <div className="col-md-4 my-4">
+              <a target="_blank" rel="noreferrer" href="https://lalistadelpueblo.cl/" title="La Lista del Pueblo">
+                <img src={LogoListaImg} alt="Logo lista del Pueblo" />
+              </a>
+              <strong className="d-block d-md-none mt-4">2021 Giovanna Grandón</strong>
+            </div>
           </div>
-          <div className="col-lg-6 d-none d-lg-block">
-            <img className="img-fluid" src={tiaTrajeImg} alt="Logo" />
-          </div>
-        </div>
-      </section>
-      <section style={ContributionsSection} className="contributions-section">
-        <div className="row">
-          <div className="col-lg-6">
-            <p>Esta campaña es independiente, no está financiada por partidos políticos ni por grandes empresas. Nuestro trabajo es 100% voluntario, pero necesitamos ayuda para financiar materiales y cosas prácticas de la campaña. La contienda es desigual, pero con tu ayuda y la de otrxs podemos lograrlo. ¡Sólo el pueblo ayuda al pueblo!</p>
-          </div>
-          <div className="col-lg-6">
-            <a target="_blank" rel="noreferrer" className="btn btn-success btn-lg" href="https://aportes.servel.cl/servel-aportes/inicio.xhtml">APORTA CON DINERO</a>
-          </div>
-        </div>
-      </section>
-      <footer>
-        <div className="row">
-          <div className="col-md-4 my-4"><img src={LogoImg} alt="Logo" /></div>
-          <div className="col-md-4 my-4">
-            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/bailapikachu.oficial/" title="instagram">
-              <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-              </svg>
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://twitter.com/tiapikachu" title="twitter">
-              <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
-              </svg>
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCEcmyTtxFIrUFiYpdhBUfJA" title="youtube">
-              <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
-              </svg>
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/tiapikachuconstituyente" title="facebook">
-              <svg aria-hidden="true" focusable="false" dataprefix="fab" dataicon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
-              </svg>
-            </a>
-            <strong className="d-none d-md-block">2021 Giovanna Grandón</strong>
-          </div>
-          <div className="col-md-4 my-4">
-            <a target="_blank" rel="noreferrer" href="https://lalistadelpueblo.cl/" title="La Lista del Pueblo">
-              <img src={LogoListaImg} alt="Logo lista del Pueblo" />
-            </a>
-            <strong className="d-block d-md-none mt-4">2021 Giovanna Grandón</strong>
-          </div>
-        </div>
-      </footer>
-    </main >
+        </footer>
+      </main>
+      <JotForm show={showJotForm} setShow={setShowJotForm} />
+      <a className="call-to-action__wsp" target="_blank" rel="noreferrer" href="https://wa.me/56986444560">
+        <WspIcon />
+      </a>
+    </>
   )
 }
 

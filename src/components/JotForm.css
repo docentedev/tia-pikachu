@@ -1,0 +1,23 @@
+.modal-form {
+  display: block;
+  background: #343a40ad;
+}
+
+.modal-form  .modal-dialog {
+    height: 90%;
+}
+
+
+.modal-form .modal-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+.modal-form .modal-content iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.modal-form .modal-content .modal-body {
+    padding: 0;
+}
